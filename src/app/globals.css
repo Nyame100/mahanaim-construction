@@ -1,5 +1,33 @@
 @import "tailwindcss";
 
+/*
+  Brand colour tokens — registered as Tailwind design tokens via @theme.
+  Naming convention: --color-brand-{group}-{shade}
+  Tailwind v4 reads every --color-* variable inside @theme and generates the
+  full set of utility classes automatically:
+    bg-brand-green-dark, text-brand-green-dark, border-brand-green-dark, etc.
+
+  Values are kept in sync with src/lib/constants/colors.ts, which is the
+  source of truth for raw hex values used outside of CSS (JS/TS consumers).
+*/
+@theme {
+  /* Green scale — primary brand palette */
+  --color-brand-green-dark: #1a4a2e;
+  --color-brand-green-mid: #2d7a4f;
+  --color-brand-green-light: #4caf7d;
+  --color-brand-green-pale: #e8f5ee;
+
+  /* Purple scale — secondary brand palette */
+  --color-brand-purple-dark: #3d1a6e;
+  --color-brand-purple-mid: #6b3fa0;
+  --color-brand-purple-light: #9b6dca;
+  --color-brand-purple-pale: #f0eaf8;
+
+  /* Neutrals */
+  --color-brand-off-white: #f7f5f0;
+  --color-brand-charcoal: #1c1c1c;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
