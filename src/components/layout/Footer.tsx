@@ -63,7 +63,7 @@ export default function Footer() {
             </span>
           </Link>
 
-          <p className="font-body font-light text-sm text-white/60 leading-relaxed max-w-xs">
+          <p className="font-body font-light text-sm text-white/60 leading-relaxed">
             Building complex, technically demanding projects that change the
             environments we live and work in.
           </p>

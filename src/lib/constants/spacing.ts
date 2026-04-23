@@ -10,6 +10,7 @@
 //   2. As Tailwind utility classes via the @theme block in globals.css:
 //      p-xs, m-sm, gap-md, etc.
 
+
 export const spacing = {
   // 4px — tight internal padding; icon gutters; hairline separators
   xs: "4px",
