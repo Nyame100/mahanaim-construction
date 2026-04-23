@@ -12,6 +12,13 @@ interface NavSection {
   links: NavLink[];
 }
 
+// A single service entry — used on the homepage and any services listing page.
+interface Service {
+  title: string;
+  description: string;
+  href: string;
+}
+
 // The complete shape of the site-wide configuration object.
 // Using an interface (not a type alias) because this is a named data model with
 // no unions or computed types — interface gives cleaner errors and IDE hover text.
@@ -27,6 +34,9 @@ interface SiteConfig {
 
   // Physical presence — used in footer, contact page, and structured data (schema.org)
   locations: string[];
+
+  // Featured services — drives the homepage services section and any services listing
+  services: Service[];
 
   // Site navigation — drives the header nav and any mobile menu components
   nav: NavSection[];
@@ -46,10 +56,44 @@ export const siteConfig: SiteConfig = {
 
   // Contact details — used in the footer, contact page, and structured data markup
   email: "info@mahanaim.org",
-  phone: "+234 800 000 0000",
+  phone: "+233 800 000 0000",
 
   // Office locations — rendered in the footer and the contact/locations page
   locations: ["Tema", "Accra", "Takoradi"],
+
+  // Featured services — displayed on the homepage and services overview pages.
+  services: [
+    {
+      title: "Residential Construction",
+      description: "Custom homes, apartment complexes and estates built with craftsmanship and livability.",
+      href: "/what-we-build/residential",
+    },
+    {
+      title: "Commercial Buildings",
+      description: "Office towers, retail centres and mixed-use developments designed for long-term value.",
+      href: "/what-we-build/commercial-office",
+    },
+    {
+      title: "Data Centers",
+      description: "Mission-critical facilities with precision engineering, power and cooling infrastructure.",
+      href: "/what-we-build/data-centers",
+    },
+    {
+      title: "Special Facilities",
+      description: "Healthcare, education and government facilities requiring specialized regulatory compliance.",
+      href: "/what-we-build/healthcare-facilities",
+    },
+    {
+      title: "Infrastructure",
+      description: "Roads, civil works and large-scale infrastructure delivered on time and on budget.",
+      href: "/what-we-build/infrastructure",
+    },
+    {
+      title: "Project Management",
+      description: "End-to-end construction management from feasibility through to handover.",
+      href: "/what-we-build/project-management",
+    },
+  ],
 
   // Primary navigation structure.
   // Each section maps to a top-level menu item; its links array populates the dropdown.
