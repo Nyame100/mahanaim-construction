@@ -79,3 +79,9 @@ body {
   color: var(--foreground);
   font-family: var(--font-barlow), sans-serif;
 }
+
+/* Marquee: moves one full list width left; works because the JSX duplicates the list */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
