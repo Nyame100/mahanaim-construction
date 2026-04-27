@@ -1,4 +1,5 @@
 import Hero from "@/components/home/Hero";
+import Insights from "@/components/home/Insights";
 import Marquee from "@/components/home/Marquee";
 import ProcessSteps from "@/components/home/ProcessSteps";
 import ProjectsGrid from "@/components/home/ProjectsGrid";
@@ -12,6 +13,7 @@ export default function Home() {
       <ServicesGrid/>
       <ProjectsGrid/>
       <ProcessSteps/>
+      <Insights/>
     </main>
   );
 }
