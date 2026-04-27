@@ -33,7 +33,7 @@ export default function Sectors() {
                 type="button"
                 onClick={() => setActiveIndex(index)}
                 className={[
-                  'w-full flex justify-between items-center py-md px-lg border-b border-white/10 transition-colors',
+                  'w-full flex justify-between cursor-pointer items-center py-md px-lg border-b border-white/10 transition-colors',
                   index === activeIndex
                     ? 'text-brand-green-light border-l-2 border-brand-green-light pl-md'
                     : 'text-white/60 hover:text-white',
@@ -61,7 +61,7 @@ export default function Sectors() {
               {activeSector.capabilities.map((cap) => (
                 <span
                   key={cap}
-                  className="border border-white/20 px-md py-xs font-body text-sm text-white/70 hover:bg-brand-purple-mid hover:border-brand-purple-mid hover:text-white transition-colors"
+                  className="border border-white/20 px-md py-xs font-body text-sm text-white/70 "
                 >
                   {cap}
                 </span>
