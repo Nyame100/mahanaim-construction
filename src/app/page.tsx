@@ -4,6 +4,7 @@ import Insights from "@/components/home/Insights";
 import Marquee from "@/components/home/Marquee";
 import ProcessSteps from "@/components/home/ProcessSteps";
 import ProjectsGrid from "@/components/home/ProjectsGrid";
+import Sectors from "@/components/home/Sectors";
 import ServicesGrid from "@/components/home/ServicesGrid";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <Marquee/>
       <ServicesGrid/>
       <ProjectsGrid/>
+      <Sectors/>
       <ProcessSteps/>
       <Insights/>
       <CTABand/>
