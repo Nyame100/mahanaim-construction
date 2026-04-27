@@ -1,3 +1,4 @@
+import CTABand from "@/components/home/CTABand";
 import Hero from "@/components/home/Hero";
 import Insights from "@/components/home/Insights";
 import Marquee from "@/components/home/Marquee";
@@ -14,6 +15,7 @@ export default function Home() {
       <ProjectsGrid/>
       <ProcessSteps/>
       <Insights/>
+      <CTABand/>
     </main>
   );
 }
