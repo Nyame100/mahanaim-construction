@@ -24,7 +24,7 @@ export default function CTABand() {
           <h2 className="font-display text-5xl leading-none text-white mb-md">
             Ready to Break Ground?
           </h2>
-          <p className="font-body text-white/60 leading-relaxed max-w-lg">
+          <p className="font-body text-white/60 leading-relaxed max-w-2xl">
             {siteConfig.description}
           </p>
         </div>
