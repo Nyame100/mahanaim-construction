@@ -19,6 +19,13 @@ interface Service {
   href: string;
 }
 
+// A market sector entry — used on the What We Build pages and sector landing pages.
+interface Sector {
+  title: string;
+  description: string;
+  capabilities: string[];
+}
+
 // The complete shape of the site-wide configuration object.
 // Using an interface (not a type alias) because this is a named data model with
 // no unions or computed types — interface gives cleaner errors and IDE hover text.
@@ -37,6 +44,9 @@ interface SiteConfig {
 
   // Featured services — drives the homepage services section and any services listing
   services: Service[];
+
+  // Market sectors — drives the What We Build section and individual sector pages
+  sectors: Sector[];
 
   // Site navigation — drives the header nav and any mobile menu components
   nav: NavSection[];
@@ -92,6 +102,87 @@ export const siteConfig: SiteConfig = {
       title: "Project Management",
       description: "End-to-end construction management from feasibility through to handover.",
       href: "/what-we-build/project-management",
+    },
+  ],
+
+  // Market sectors — used on the What We Build overview and individual sector pages.
+  sectors: [
+    {
+      title: "Residential",
+      description: "We design and build homes and residential communities that stand the test of time. From single-family homes to large-scale estate developments, combining craftsmanship, modern design and quality materials.",
+      capabilities: [
+        "Custom Homes",
+        "Apartment Complexes",
+        "Estate Development",
+        "Luxury Residences",
+        "Affordable Housing",
+      ],
+    },
+    {
+      title: "Commercial",
+      description: "Our commercial division delivers office towers, retail developments and mixed-use projects that maximise value. We work closely with developers and businesses to realise bold architectural visions.",
+      capabilities: [
+        "Office Towers",
+        "Retail Centres",
+        "Mixed-Use Developments",
+        "Corporate Campuses",
+        "Hotel & Hospitality",
+      ],
+    },
+    {
+      title: "Data Centers",
+      description: "Mission-critical facilities demand a different level of precision. Our specialist team delivers Tier-III and Tier-IV data centers with robust power systems, advanced cooling and watertight security.",
+      capabilities: [
+        "Tier-III / Tier-IV",
+        "Power & UPS Systems",
+        "Precision Cooling",
+        "Network Infrastructure",
+        "Security Systems",
+      ],
+    },
+    {
+      title: "Healthcare",
+      description: "Healthcare construction requires strict compliance, infection control standards and an environment that supports patient wellbeing. We have delivered hospitals, clinics and specialist medical facilities.",
+      capabilities: [
+        "Hospitals",
+        "Specialist Clinics",
+        "Laboratories",
+        "Pharmacy Fit-outs",
+        "Medical Offices",
+      ],
+    },
+    {
+      title: "Education",
+      description: "From primary schools to university campuses, we build learning environments that inspire. Our education projects meet strict safety standards while creating spaces that support modern pedagogy.",
+      capabilities: [
+        "Primary Schools",
+        "Secondary Schools",
+        "Universities",
+        "Libraries",
+        "Sports Facilities",
+      ],
+    },
+    {
+      title: "Industrial",
+      description: "From warehouses and logistics hubs to manufacturing plants and processing facilities, we deliver industrial construction prioritising safety, workflow efficiency and long-term operational performance.",
+      capabilities: [
+        "Warehouses",
+        "Manufacturing Plants",
+        "Logistics Hubs",
+        "Processing Facilities",
+        "Cold Storage",
+      ],
+    },
+    {
+      title: "Infrastructure",
+      description: "Large-scale civil and infrastructure works delivered with precision and discipline. We manage complex multi-stakeholder projects from feasibility through to commissioning.",
+      capabilities: [
+        "Roads & Highways",
+        "Bridges",
+        "Utilities",
+        "Drainage Systems",
+        "Civil Works",
+      ],
     },
   ],
 
