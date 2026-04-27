@@ -1,0 +1,51 @@
+name: CI
+
+# Run on every push to the develop branch so regressions are caught as soon
+# as they land, and on every pull request targeting main so the merge commit
+# is validated before production-bound code is accepted.
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  quality:
+    # GitHub-hosted Ubuntu runner — a fresh VM is provisioned for each run
+    # and destroyed afterwards, giving us a clean, reproducible environment.
+    runs-on: ubuntu-latest
+
+    steps:
+      # Without this step the runner has no code to work with. actions/checkout
+      # clones the repository at the triggering commit into the working directory.
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Sets the exact Node.js version the project requires and wires up the
+      # npm cache so that node_modules are restored from cache on subsequent
+      # runs, cutting install time significantly.
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      # npm ci installs exactly what package-lock.json specifies, fails if the
+      # lockfile is missing or out of sync, and wipes node_modules first —
+      # making installs deterministic and safe for CI. Never use npm install here.
+      - name: Install dependencies
+        run: npm ci
+
+      # Runs the TypeScript compiler in check-only mode (noEmit is already set
+      # in tsconfig.json). This catches type errors without producing any output
+      # files, acting as a fast static safety net before tests or builds run.
+      - name: Type check
+        run: npx tsc --noEmit
+
+      # Runs ESLint across the project. The lint script in package.json calls
+      # eslint directly. Any lint error exits with a non-zero code, failing the
+      # job and blocking the PR or branch from being considered green.
+      - name: Lint
+        run: npm run lint
