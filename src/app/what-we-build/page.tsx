@@ -12,12 +12,12 @@ interface Project {
 }
 
 const projects: Project[] = [
-  { title: 'Apex Tier-IV Data Hub',       location: 'Lagos',      sector: 'Data Center',    gradient: 'bg-gradient-to-br from-green-950 to-green-800'   },
+  { title: 'Apex Tier-IV Data Hub',       location: 'Koforidua',      sector: 'Data Center',    gradient: 'bg-gradient-to-br from-green-950 to-green-800'   },
   { title: 'Greenview Estate',            location: 'Accra',      sector: 'Residential',    gradient: 'bg-gradient-to-br from-purple-950 to-purple-800'  },
   { title: 'Crown Office Park',           location: 'Takoradi',   sector: 'Commercial',     gradient: 'bg-gradient-to-br from-slate-900 to-slate-700'    },
   { title: 'Unity Medical Centre',        location: 'Kumasi',     sector: 'Healthcare',     gradient: 'bg-gradient-to-br from-stone-950 to-amber-900'    },
   { title: 'Northern Corridor Road',      location: 'Tema',       sector: 'Infrastructure', gradient: 'bg-gradient-to-br from-indigo-950 to-indigo-800'  },
-  { title: 'Meridian Warehouse Complex',  location: 'Ogun State', sector: 'Industrial',     gradient: 'bg-gradient-to-br from-slate-950 to-slate-700'    },
+  { title: 'Meridian Warehouse Complex',  location: 'Tamale',     sector: 'Industrial',     gradient: 'bg-gradient-to-br from-slate-950 to-slate-700'    },
   { title: 'Pinnacle Academy Campus',     location: 'Kumasi',     sector: 'Education',      gradient: 'bg-gradient-to-br from-green-950 to-green-700'    },
   { title: 'Harbour View Mall',           location: 'Accra',      sector: 'Commercial',     gradient: 'bg-gradient-to-br from-purple-950 to-purple-700'  },
 ]
